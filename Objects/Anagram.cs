@@ -23,18 +23,20 @@ namespace AnagramApp.Objects
             anagramSort = _anagramWord.ToCharArray();
 
             Array.Sort(anagramSort);
-            Console.WriteLine(anagramSort);
 
             string anagram = new string(anagramSort);
 
             for(var index = 0; index < _checkWords.Length; index++)
             {
-                char[] anagramCheckSort = _checkWords[index].ToCharArray();
-                Array.Sort(anagramCheckSort);
-                string newAnagramCheckSort = new string(anagramCheckSort);
-                if (newAnagramCheckSort == anagram)
+                if (_checkWords[index].Length == anagram.Length)
                 {
-                    _anagramWordSort.Add(_checkWords[index]);
+                    char[] anagramCheckSort = _checkWords[index].ToCharArray();
+                    Array.Sort(anagramCheckSort);
+                    string newAnagramCheckSort = new string(anagramCheckSort);
+                    if (newAnagramCheckSort == anagram)
+                    {
+                        _anagramWordSort.Add(_checkWords[index]);
+                    }
                 }
             }
         }

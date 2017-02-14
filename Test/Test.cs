@@ -37,7 +37,7 @@ namespace AnagramAppTest
         public void AnagramWordSort_CheckingForPossibleAnagrams()
         {
             // Arrange
-            string anagramWord = "neon";
+            string anagramWord = "neo";
             string listWords = "one, two, three";
             List<string> output = new List<string> {"one"};
             // Act
